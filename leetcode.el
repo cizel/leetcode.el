@@ -162,8 +162,8 @@ The elements of :problems has attributes:
 
 ;;; Login
 ;; URL
-(defconst leetcode--domain    "leetcode.com")
-(defconst leetcode--base-url  "https://leetcode.com")
+(defconst leetcode--domain    "leetcode-cn.com")
+(defconst leetcode--base-url  "https://leetcode-cn.com")
 (defconst leetcode--url-login (concat leetcode--base-url "/accounts/login"))
 
 ;; Header
@@ -889,7 +889,8 @@ Get current entry by using `tabulated-list-get-entry' and use
                         "dislikes: " (number-to-string .dislikes)))
         (insert .content)
         (setq shr-current-font t)
-        (leetcode--replace-in-buffer "" "")
+        (leetcode--replace-in-buffer "
+" "")
         ;; NOTE: shr.el can't render "https://xxxx.png", so we use "http"
         (leetcode--replace-in-buffer "https" "http")
         (shr-render-buffer (current-buffer)))
@@ -1034,7 +1035,8 @@ for current problem."
                     (goto-char (point-min))
                     (search-forward (string-trim template-code) nil t))
             (insert template-code))
-          (leetcode--replace-in-buffer "" ""))))
+          (leetcode--replace-in-buffer "
+" ""))))
 
     (display-buffer code-buf
                     '((display-buffer-reuse-window
