@@ -429,7 +429,7 @@ Return a list of rows, each row is a vector:
                      'font-lock-face 'leetcode-checkmark-face leetcode--checkmark))
                 " ")
               ;; position
-              (number-to-string (plist-get p :pos))
+              (number-to-string (plist-get p :id))
               ;; title
               (concat
                (plist-get p :title)
